@@ -1,0 +1,10 @@
+version: '2'
+services:
+  screentest:
+    image: nginx
+    volumes:
+      # 注意./路径是相对compose.yml的，如果没有./则是代表docker内部自动生成的data volume
+      - ./:/usr/share/nginx/html
+    ports:
+      - "18888:80"
+    restart: always
